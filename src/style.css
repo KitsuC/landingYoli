@@ -25,6 +25,14 @@ body {
     }
 }
 
+@media (max-width: 1200px) and (min-width: 992px) {
+    .container-fl {
+        max-width: 752px;
+        width: 100%;
+        margin: auto;
+    }
+}
+
 @media (max-width: 992px) {
     .container {
         max-width: 720px;

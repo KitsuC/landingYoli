@@ -1,18 +1,19 @@
 <template>
-  <div class="h-[100vh] container">
+  <div class="h-[100vh] container relative">
     <div class="h-[50%] flex flex-col relative justify-between p-[20px]">
       <img :src="detailImg" alt=""
            class="h-full w-full object-cover absolute top-0 right-0 bottom-0 rounded-b-[8px] z-[-1]">
       <div class="ml-auto flex gap-[20px] z-[9]">
         <button
+            @click="copyLink()"
             class="p-[12px] rounded-full bg-[rgba(255,255,255,0.3)] w-[44px] h-[44px] flex items-center justify-center
-             hover:opacity-[0.8] duration-300 ease"
+             hover:opacity-[0.8] duration-300 ease copy-btn"
         >
           <img :src="shareBtn" alt="" class="z-[9] opacity-1">
         </button>
         <button
             @click="handleBack"
-            class="p-[12px] rounded-full bg-white bg-[rgba(255,255,255,0.3)] w-[44px] h-[44px] flex items-center
+            class="p-[12px] rounded-full bg-[rgba(255,255,255,0.3)] w-[44px] h-[44px] flex items-center
              justify-center hover:opacity-[0.8] duration-300 ease"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -59,11 +60,23 @@
 import detailImg from '~/assets/img/detail-1.jpg'
 import shareBtn from '~/assets/img/share-btn.png'
 import {useRouter} from 'vue-router'
+import {useToast} from "primevue/usetoast";
 
 const router = useRouter()
 
+
+
 const handleBack = () => {
   router.push('/')
+}
+
+
+const copyLink = () => {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    console.log('thanh cong')
+  }, () => {
+    console.log('err')
+  });
 }
 </script>
 

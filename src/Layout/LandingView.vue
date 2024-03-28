@@ -1,6 +1,7 @@
 <template>
-  <div class=" py-[60px] h-[100vh] ">
-    <div class="flex container m-auto h-[100%] max-h-[902px] max-[1200px]:flex-col max-[1200px]:h-fit">
+  <div class=" py-[60px] h-[100vh] max-[1200px]:h-fit">
+    <div
+        class="flex container container-fl m-auto h-[100%] max-h-[902px] max-[1200px]:max-h-fit max-[1200px]:flex-col max-[1200px]:h-fit min-[1200px]:justify-between">
       <div
           class="w-[43%] max-[1200px]:w-[100%] h-[100%] max-[1200px]:h-[630px] max-[1200px]:mb-[30px] flex flex-col
           justify-between max-[576px]:h-[500px]"
@@ -56,43 +57,49 @@
         </div>
       </div>
       <div
-          class="w-[57%] max-[1200px]:w-[100%] max-[1200px]:h-fit overflow-auto snap-y snap-mandatory flex flex-col
-          gap-y-[60px] hidden-scroll "
+          class="aspect-[755/902] max-[1200px]:w-[100%] max-[1200px]:h-fit overflow-auto snap-y snap-mandatory flex flex-col
+          hidden-scroll max-[1200px]:aspect-[0] w-fit relative flex-shrink-0 gap-[60px] "
       >
-        <button
-            @click="handleDetail"
+        <div
+            class="container container-fl sticky max-[1200px]:fixed top-[calc(100%-115px)] z-[999]  max-[576px]:top-[calc(100%-91px)]">
+          <button
+              @click="handleDetail"
+              class=" h-[114px] p-[12px] rounded-[12px] overflow-hidden right-0 left-0 w-full
+                   flex-shrink-0 cursor-pointer max-[1200px]:m-auto max-[576px]:h-[90px] duration-300 ease-in-out"
+          >
+            <img :src="bgBotSlider1" alt="" class="absolute w-full right-0 top-0  h-full z-[9] rounded-[12px]">
+            <div class="h-full flex justify-between">
+              <div class="text-white flex flex-col gap-[3px] justify-center h-full z-[10] items-start">
+                <span class="text-[12px] font-[600] max-[576px]:text-[10px]">25 Mar 2024</span>
+                <h4 class="font-[700] text-[20px] font-beauty max-[576px]:text-[14px]">Ngày hội Yoga</h4>
+              </div>
+              <img :src="imgBotSlider1" alt=""
+                   class="w-[160px] h-full rounded-[8px] max-[576px]:w-[120px] object-cover z-[10]">
+            </div>
+          </button
+          >
+        </div>
+        <div
+
             class="snap-center h-full w-full flex items-end justify-center flex-shrink-0 relative rounded-t-[48px]
             overflow-hidden max-[1200px]:h-[902px] max-[576px]:h-[630px] max-[1200px]:max-w-[752px] max-[1200px]:m-auto"
         >
           <img :src="slider1" alt=""
                class="w-full h-full object-cover absolute top-0 right-0 bottom-0 z-[-2] rounded-[48px] ">
-          <div
-              class="relative w-full h-[114px] p-[12px] rounded-[12px] overflow-hidden"
-          >
-            <img :src="bgBotSlider1" alt="" class="absolute w-full right-0 top-0 z-[-1] h-full">
-            <div class="h-full flex justify-between">
-              <div class="text-white flex flex-col gap-[7px] justify-center h-full">
-                <span class="text-[12px] font-[600] max-[576px]:text-[10px]">25 Mar 2024</span>
-                <h4 class="font-[700] text-[20px] font-beauty max-[576px]:text-[16px]">Ngày hội Yoga</h4>
-              </div>
-              <img :src="imgBotSlider1" alt=""
-                   class="w-[160px] h-full rounded-[8px] max-[576px]:w-[120px] object-cover">
-            </div>
-          </div
-          >
-        </button>
+
+        </div>
         <div
-            class="snap-center h-full w-full flex items-center flex-col flex-shrink-0 relative py-[60px] rounded-[48px]
+            class="snap-center h-full w-full flex items-center flex-col flex-shrink-0 relative py-[30px] rounded-[48px]
              overflow-hidden max-[1200px]:h-[902px] max-[576px]:h-[630px] max-[576px]:py-[20px]  max-[1200px]:max-w-[752px] max-[1200px]:m-auto px-[20px]"
         >
           <img :src="slider2" alt="" class="absolute w-full h-full top-0 bottom-0 right-0 z-[-1] object-cover">
           <div
-              class="rounded-full flex justify-center items-center bg-[#F04D00] h-[60px] w-[60px] mb-[20px] flex-shrink-0 max-[576px]:h-[40px] max-[576px]:w-[40px] max-[576px]:mb-[10px]">
+              class="rounded-full flex justify-center items-center bg-[#F04D00] h-[50px] w-[50px] mb-[20px] flex-shrink-0 max-[576px]:h-[40px] max-[576px]:w-[40px] max-[576px]:mb-[10px]">
             <img :src="videoPlay" alt="">
           </div>
           <div class="flex flex-col gap-[4px] mb-[52px] max-w-[596px] items-center max-[576px]:mb-[20px] ">
-            <h4 class="text-[24px] font-[700] max-[576px]:text-[18px] ">Expert-led Video Courses</h4>
-            <p class="text-[16px] font-[400] leading-[22px] text-center max-[576px]:text-[12px]">
+            <h4 class="text-[20px] font-[700] max-[576px]:text-[18px] ">Expert-led Video Courses</h4>
+            <p class="text-[14px] font-[400] leading-[22px] text-center max-[576px]:text-[12px]">
               Learn from top experts in the field with our comprehensive video courses covering various yoga styles and
               fitness routines.
             </p>
@@ -100,74 +107,74 @@
           <img :src="iphoneSlider2" alt="" class="max-[576px]:w-[180px]">
         </div>
         <div
-            class="snap-center h-full w-full flex items-center flex-col flex-shrink-0 relative pt-[60px] rounded-[48px]
+            class="snap-center h-full w-full flex items-center flex-col flex-shrink-0 relative pt-[30px] rounded-[48px]
             overflow-hidden max-[1200px]:h-[902px] max-[576px]:h-[630px] max-[576px]:pt-[20px] max-[1200px]:max-w-[752px] max-[1200px]:m-auto px-[20px]">
           <img :src="slider3" alt="" class="absolute w-full h-full top-0 bottom-0 right-0 z-[-1] object-cover">
           <div
-              class="rounded-full flex justify-center items-center bg-[#F04D00] h-[60px] w-[60px] mb-[20px] flex-shrink-0 max-[576px]:h-[40px] max-[576px]:w-[40px] max-[576px]:mb-[10px]">
+              class="rounded-full flex justify-center items-center bg-[#F04D00] h-[50px] w-[50px] mb-[20px] flex-shrink-0 max-[576px]:h-[40px] max-[576px]:w-[40px] max-[576px]:mb-[10px]">
             <img :src="iconLayout" alt="">
           </div>
           <div class="flex flex-col gap-[4px] mb-[52px] max-w-[596px] items-center max-[576px]:mb-[20px] ">
-            <h4 class="text-[24px] font-[700] max-[576px]:text-[18px] ">Community Connection</h4>
-            <p class="text-[16px] font-[400] leading-[22px] text-center max-[576px]:text-[12px]">
+            <h4 class="text-[20px] font-[700] max-[576px]:text-[18px] ">Community Connection</h4>
+            <p class="text-[14px] font-[400] leading-[22px] text-center max-[576px]:text-[12px]">
               Connect with like-minded individuals, share experiences, and find inspiration within our supportive yoga
               and fitness community.
             </p>
           </div>
         </div>
         <div
-            class="snap-center h-full w-full flex items-center flex-col flex-shrink-0 relative pt-[60px] rounded-[48px]
+            class="snap-center h-full w-full flex items-center flex-col flex-shrink-0 relative pt-[30px] rounded-[48px]
             overflow-hidden max-[1200px]:h-[902px] max-[1200px]:max-w-[752px] max-[1200px]:m-auto px-[20px]
             max-[576px]:h-[630px] max-[576px]:pt-[20px]"
         >
           <img :src="slider4" alt="" class="absolute w-full h-full top-0 bottom-0 right-0 z-[-1] object-cover">
           <div
-              class="rounded-full flex justify-center items-center bg-[#F04D00] h-[60px] w-[60px] mb-[20px] flex-shrink-0 max-[576px]:h-[40px] max-[576px]:w-[40px] max-[576px]:mb-[10px]">
+              class="rounded-full flex justify-center items-center bg-[#F04D00] h-[50px] w-[50px] mb-[20px] flex-shrink-0 max-[576px]:h-[40px] max-[576px]:w-[40px] max-[576px]:mb-[10px]">
             <img :src="iconYoga" alt="">
           </div>
           <div class="flex flex-col gap-[4px] mb-[52px] max-w-[596px] items-center max-[576px]:mb-[20px] ">
-            <h4 class="text-[24px] font-[700] max-[576px]:text-[18px] ">Activity Tracking</h4>
-            <p class="text-[16px] font-[400] leading-[22px] text-center max-[576px]:text-[12px]">
+            <h4 class="text-[20px] font-[700] max-[576px]:text-[18px] ">Activity Tracking</h4>
+            <p class="text-[14px] font-[400] leading-[22px] text-center max-[576px]:text-[12px]">
               Monitor your progress effortlessly with our intuitive activity tracking feature, allowing you to track
               your achievements weekly, monthly, or yearly.
             </p>
           </div>
         </div>
         <div
-            class="snap-center h-full w-full flex items-center flex-col flex-shrink-0 relative pt-[60px] rounded-[48px]
+            class="snap-center h-full w-full flex items-center flex-col flex-shrink-0 relative pt-[30px] rounded-[48px]
             overflow-hidden max-[1200px]:h-[902px] max-[1200px]:max-w-[752px] max-[1200px]:m-auto px-[20px] max-[576px]:h-[630px]
             max-[576px]:pt-[20px]">
           <img :src="slider5" alt="" class="absolute w-full h-full top-0 bottom-0 right-0 z-[-1] object-cover">
           <div
-              class="rounded-full flex justify-center items-center bg-[#F04D00] h-[60px] w-[60px] mb-[20px] flex-shrink-0 max-[576px]:h-[40px] max-[576px]:w-[40px] max-[576px]:mb-[10px]">
+              class="rounded-full flex justify-center items-center bg-[#F04D00] h-[50px] w-[50px] mb-[20px] flex-shrink-0 max-[576px]:h-[40px] max-[576px]:w-[40px] max-[576px]:mb-[10px]">
             <img :src="iconCup" alt="">
           </div>
           <div class="flex flex-col gap-[4px] mb-[52px] max-w-[596px] items-center max-[576px]:mb-[20px] ">
-            <h4 class="text-[24px] font-[700] max-[576px]:text-[18px] ">Compete on Leaderboards</h4>
-            <p class="text-[16px] font-[400] leading-[22px] text-center max-[576px]:text-[12px]">
+            <h4 class="text-[20px] font-[700] max-[576px]:text-[18px] ">Compete on Leaderboards</h4>
+            <p class="text-[14px] font-[400] leading-[22px] text-center max-[576px]:text-[12px]">
               Challenge yourself and compete with others on leaderboards, gaining motivation and a sense of
               accomplishment as you progress on your fitness journey.
             </p>
           </div>
         </div>
         <div
-            class="snap-center h-full w-full flex items-center flex-col flex-shrink-0 relative pt-[60px] rounded-[48px]
+            class="snap-center h-full w-full flex items-center flex-col flex-shrink-0 relative pt-[30px] rounded-[48px]
              overflow-hidden max-[1200px]:h-[902px] max-[1200px]:max-w-[752px] max-[1200px]:m-auto px-[20px]
              max-[576px]:h-[630px] max-[576px]:pt-[20px]">
           <img :src="slider2" alt="" class="absolute w-full h-full top-0 bottom-0 right-0 z-[-1] object-cover">
           <div
-              class="rounded-full flex justify-center items-center bg-[#F04D00] h-[60px] w-[60px] mb-[20px] flex-shrink-0 max-[576px]:h-[40px] max-[576px]:w-[40px] max-[576px]:mb-[10px]">
+              class="rounded-full flex justify-center items-center bg-[#F04D00] h-[50px] w-[50px] mb-[20px] flex-shrink-0 max-[576px]:h-[40px] max-[576px]:w-[40px] max-[576px]:mb-[10px]">
             <img :src="iconStar" alt="">
           </div>
-          <div class="flex flex-col gap-[4px] mb-[32px] max-w-[596px] items-center max-[576px]:mb-[15px]">
-            <h4 class="text-[24px] font-[700] max-[576px]:text-[18px] ">Flexible Subscription Plans</h4>
-            <p class="text-[16px] font-[400] leading-[22px] text-center max-[576px]:text-[12px]">
+          <div class="flex flex-col gap-[4px] mb-[25px] max-w-[596px] items-center max-[576px]:mb-[15px]">
+            <h4 class="text-[20px] font-[700] max-[576px]:text-[18px] ">Flexible Subscription Plans</h4>
+            <p class="text-[14px] font-[400] leading-[22px] text-center max-[576px]:text-[12px]">
               Choose from flexible subscription plans, whether you prefer to purchase individual courses or subscribe to
               monthly or yearly plans for unlimited access.
             </p>
           </div>
           <div
-              class="text-[16px] font-[500] text-[#8A8A8A] mb-[25px] max-w-[339px] text-center max-[576px]:text-[12px]">
+              class="text-[14px] font-[500] text-[#8A8A8A] mb-[20px] max-w-[339px] text-center max-[576px]:text-[12px]">
             Get 7 days for free. Then only from <span class="font-[600] text-[#202020]">$699/year</span>
             ($699/week). Cancel anytime
           </div>
@@ -175,48 +182,50 @@
               class="flex w-full justify-between max-w-[588px] max-[768px]:max-w-[490px]"
           >
             <div
-                class="flex flex-col gap-[21px] w-[54%] pt-[76px] max-[768px]:w-[30%] max-[576px]:gap-[15px]  max-[576px]:pt-[65px]"
+                class="flex flex-col gap-[12px] w-[54%] pt-[72px] max-[768px]:w-[30%] max-[576px]:pt-[66px] max-[576px]:gap-[11px]"
             >
               <span
-                  class="text-[18px] text-[#202020] font-[500] leading-[32px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
+                  class="text-[16px] text-[#202020] font-[500] leading-[24px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
               <span
-                  class="text-[18px] text-[#202020] font-[500] leading-[32px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
+                  class="text-[16px] text-[#202020] font-[500] leading-[24px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
               <span
-                  class="text-[18px] text-[#202020] font-[500] leading-[32px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
+                  class="text-[16px] text-[#202020] font-[500] leading-[24px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
               <span
-                  class="text-[18px] text-[#202020] font-[500] leading-[32px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
+                  class="text-[16px] text-[#202020] font-[500] leading-[24px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
               <span
-                  class="text-[18px] text-[#202020] font-[500] leading-[32px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
+                  class="text-[16px] text-[#202020] font-[500] leading-[24px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
               <span
-                  class="text-[18px] text-[#202020] font-[500] leading-[32px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
+                  class="text-[16px] text-[#202020] font-[500] leading-[24px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
               <span
-                  class="text-[18px] text-[#202020] font-[500] leading-[32px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
+                  class="text-[16px] text-[#202020] font-[500] leading-[24px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
               <span
-                  class="text-[18px] text-[#202020] font-[500] leading-[32px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
+                  class="text-[16px] text-[#202020] font-[500] leading-[24px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
               <span
-                  class="text-[18px] text-[#202020] font-[500] leading-[32px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
+                  class="text-[16px] text-[#202020] font-[500] leading-[24px] max-[576px]:text-[12px] max-[576px]:leading-[12px]">Feature 1</span>
             </div>
             <div
                 class="flex justify-between w-[46%] gap-[16px] text-[#202020] text-[18px] font-[500]
                 max-[768px]:w-[70%] max-[576px]:text-[12px]"
             >
-              <div class="flex-1 text-center max-[576px]:text-[12px]">
+              <div class="flex-1 text-center max-[576px]:text-[12px] text-[16px]">
                 Free
               </div>
               <div class="flex-1 flex flex-col px-[7px] items-center">
                 <div class="bg-linear-white rounded-[10px] translate-y-[-10px] px-[8px]">
-                  <div class="w-full flex flex-col items-center gap-[5px] mb-[16px] ">
+                  <div
+                      class="w-full flex flex-col items-center gap-[5px] mb-[16px] max-[576px]:text-[12px] text-[16px]">
                     <span class="mt-[10px]">Tier 1</span>
                     <div
-                        class="py-[3px] px-[10px] rounded-[41px] bg-[#289C15] text-white text-[16px] max-[576px]:text-[12px]"
+                        class="py-[3px] px-[10px] rounded-[41px] bg-[#289C15] text-white text-[14px] max-[576px]:text-[12px]"
                     >
                       Popular
                     </div>
                   </div>
-                  <div class="flex flex-col gap-[21px] max-[576px]:gap-[14px]">
+                  <div class="flex flex-col gap-[15px] max-[576px]:gap-[10px]">
                     <div class="flex justify-center w-full ">
-                      <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                      <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] h-[15px] w-[18px] "
+                             xmlns="http://www.w3.org/2000/svg"
                              width="21" height="18" viewBox="0 0 21 18" fill="none">
                           <path d="M0.949554 11.5572L5.63925 16.2468L19.7083 1.50781" stroke="#289C15"
                                 stroke-width="2.00987"/>
@@ -224,8 +233,9 @@
                       </div>
                     </div>
                     <div class="flex justify-center w-full ">
-                      <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                      <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] h-[15px] w-[18px] "
+                             xmlns="http://www.w3.org/2000/svg"
                              width="21" height="18" viewBox="0 0 21 18" fill="none">
                           <path d="M0.949554 11.5572L5.63925 16.2468L19.7083 1.50781" stroke="#289C15"
                                 stroke-width="2.00987"/>
@@ -233,8 +243,9 @@
                       </div>
                     </div>
                     <div class="flex justify-center w-full ">
-                      <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                      <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] h-[15px] w-[18px] "
+                             xmlns="http://www.w3.org/2000/svg"
                              width="21" height="18" viewBox="0 0 21 18" fill="none">
                           <path d="M0.949554 11.5572L5.63925 16.2468L19.7083 1.50781" stroke="#289C15"
                                 stroke-width="2.00987"/>
@@ -242,8 +253,9 @@
                       </div>
                     </div>
                     <div class="flex justify-center w-full ">
-                      <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                      <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] h-[15px] w-[18px] "
+                             xmlns="http://www.w3.org/2000/svg"
                              width="21" height="18" viewBox="0 0 21 18" fill="none">
                           <path d="M0.949554 11.5572L5.63925 16.2468L19.7083 1.50781" stroke="#289C15"
                                 stroke-width="2.00987"/>
@@ -251,8 +263,9 @@
                       </div>
                     </div>
                     <div class="flex justify-center w-full ">
-                      <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                      <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] h-[15px] w-[18px] "
+                             xmlns="http://www.w3.org/2000/svg"
                              width="21" height="18" viewBox="0 0 21 18" fill="none">
                           <path d="M0.949554 11.5572L5.63925 16.2468L19.7083 1.50781" stroke="#289C15"
                                 stroke-width="2.00987"/>
@@ -260,8 +273,9 @@
                       </div>
                     </div>
                     <div class="flex justify-center w-full ">
-                      <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                      <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] h-[15px] w-[18px] "
+                             xmlns="http://www.w3.org/2000/svg"
                              width="21" height="18" viewBox="0 0 21 18" fill="none">
                           <path d="M0.949554 11.5572L5.63925 16.2468L19.7083 1.50781" stroke="#289C15"
                                 stroke-width="2.00987"/>
@@ -269,8 +283,9 @@
                       </div>
                     </div>
                     <div class="flex justify-center w-full ">
-                      <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                      <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] h-[15px] w-[18px] "
+                             xmlns="http://www.w3.org/2000/svg"
                              width="21" height="18" viewBox="0 0 21 18" fill="none">
                           <path d="M0.949554 11.5572L5.63925 16.2468L19.7083 1.50781" stroke="#289C15"
                                 stroke-width="2.00987"/>
@@ -278,8 +293,9 @@
                       </div>
                     </div>
                     <div class="flex justify-center w-full ">
-                      <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                      <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] h-[15px] w-[18px] "
+                             xmlns="http://www.w3.org/2000/svg"
                              width="21" height="18" viewBox="0 0 21 18" fill="none">
                           <path d="M0.949554 11.5572L5.63925 16.2468L19.7083 1.50781" stroke="#289C15"
                                 stroke-width="2.00987"/>
@@ -287,8 +303,9 @@
                       </div>
                     </div>
                     <div class="flex justify-center w-full ">
-                      <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                      <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                        <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] h-[15px] w-[18px] "
+                             xmlns="http://www.w3.org/2000/svg"
                              width="21" height="18" viewBox="0 0 21 18" fill="none">
                           <path d="M0.949554 11.5572L5.63925 16.2468L19.7083 1.50781" stroke="#289C15"
                                 stroke-width="2.00987"/>
@@ -299,18 +316,19 @@
                 </div>
               </div>
               <div class="flex-1 flex flex-col px-[7px] items-center">
-                <div class="w-full flex flex-col items-center gap-[5px] mb-[16px]">
+                <div class="w-full flex flex-col items-center gap-[5px] mb-[16px] max-[576px]:text-[12px] text-[16px]">
                   <span>Tier 2</span>
                   <div
-                      class="py-[3px] px-[10px] rounded-[41px] bg-[#F04D00] text-white text-[16px] max-[576px]:text-[12px]"
+                      class="py-[3px] px-[10px] rounded-[41px] bg-[#F04D00] text-white text-[14px] max-[576px]:text-[12px]"
                   >
                     Best
                   </div>
                 </div>
-                <div class="flex flex-col gap-[21px] max-[576px]:gap-[14px]">
+                <div class="flex flex-col gap-[15px] max-[576px]:gap-[10px]">
                   <div class="flex justify-center w-full ">
-                    <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                    <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] w-[18px] h-[15px] "
+                           xmlns="http://www.w3.org/2000/svg"
                            width="21" height="18" viewBox="0 0 21 18" fill="none">
                         <path d="M1.42328 11.5572L6.11297 16.2468L20.1821 1.50781" stroke="#202020"
                               stroke-width="2.00987"/>
@@ -318,8 +336,9 @@
                     </div>
                   </div>
                   <div class="flex justify-center w-full ">
-                    <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                    <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] w-[18px] h-[15px] "
+                           xmlns="http://www.w3.org/2000/svg"
                            width="21" height="18" viewBox="0 0 21 18" fill="none">
                         <path d="M1.42328 11.5572L6.11297 16.2468L20.1821 1.50781" stroke="#202020"
                               stroke-width="2.00987"/>
@@ -327,8 +346,9 @@
                     </div>
                   </div>
                   <div class="flex justify-center w-full ">
-                    <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                    <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] w-[18px] h-[15px] "
+                           xmlns="http://www.w3.org/2000/svg"
                            width="21" height="18" viewBox="0 0 21 18" fill="none">
                         <path d="M1.42328 11.5572L6.11297 16.2468L20.1821 1.50781" stroke="#202020"
                               stroke-width="2.00987"/>
@@ -336,8 +356,9 @@
                     </div>
                   </div>
                   <div class="flex justify-center w-full ">
-                    <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                    <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] w-[18px] h-[15px] "
+                           xmlns="http://www.w3.org/2000/svg"
                            width="21" height="18" viewBox="0 0 21 18" fill="none">
                         <path d="M1.42328 11.5572L6.11297 16.2468L20.1821 1.50781" stroke="#202020"
                               stroke-width="2.00987"/>
@@ -345,8 +366,9 @@
                     </div>
                   </div>
                   <div class="flex justify-center w-full ">
-                    <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                    <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] w-[18px] h-[15px] "
+                           xmlns="http://www.w3.org/2000/svg"
                            width="21" height="18" viewBox="0 0 21 18" fill="none">
                         <path d="M1.42328 11.5572L6.11297 16.2468L20.1821 1.50781" stroke="#202020"
                               stroke-width="2.00987"/>
@@ -354,8 +376,9 @@
                     </div>
                   </div>
                   <div class="flex justify-center w-full ">
-                    <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                    <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] w-[18px] h-[15px] "
+                           xmlns="http://www.w3.org/2000/svg"
                            width="21" height="18" viewBox="0 0 21 18" fill="none">
                         <path d="M1.42328 11.5572L6.11297 16.2468L20.1821 1.50781" stroke="#202020"
                               stroke-width="2.00987"/>
@@ -363,8 +386,9 @@
                     </div>
                   </div>
                   <div class="flex justify-center w-full ">
-                    <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                    <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] w-[18px] h-[15px] "
+                           xmlns="http://www.w3.org/2000/svg"
                            width="21" height="18" viewBox="0 0 21 18" fill="none">
                         <path d="M1.42328 11.5572L6.11297 16.2468L20.1821 1.50781" stroke="#202020"
                               stroke-width="2.00987"/>
@@ -372,8 +396,9 @@
                     </div>
                   </div>
                   <div class="flex justify-center w-full ">
-                    <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                    <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] w-[18px] h-[15px] "
+                           xmlns="http://www.w3.org/2000/svg"
                            width="21" height="18" viewBox="0 0 21 18" fill="none">
                         <path d="M1.42328 11.5572L6.11297 16.2468L20.1821 1.50781" stroke="#202020"
                               stroke-width="2.00987"/>
@@ -381,8 +406,9 @@
                     </div>
                   </div>
                   <div class="flex justify-center w-full ">
-                    <div class="p-[7px] w-fit max-[576px]:p-[2px] ">
-                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] " xmlns="http://www.w3.org/2000/svg"
+                    <div class="p-[3px] w-fit max-[576px]:p-[2px] ">
+                      <svg class="max-[576px]:w-[12px] max-[576px]:h-[9px] w-[18px] h-[15px] "
+                           xmlns="http://www.w3.org/2000/svg"
                            width="21" height="18" viewBox="0 0 21 18" fill="none">
                         <path d="M1.42328 11.5572L6.11297 16.2468L20.1821 1.50781" stroke="#202020"
                               stroke-width="2.00987"/>
@@ -414,6 +440,24 @@ import iconYoga from '../assets/img/iconYoga.png'
 import iconCup from '../assets/img/iconCup.png'
 import iconStar from '../assets/img/iconStar.png'
 import {useRouter} from 'vue-router'
+
+let navBar = document.querySelector('.header');
+let lastSrollTop = 0;
+
+
+window.addEventListener('scroll', () => {
+  if (window.innerWidth < 992) {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastSrollTop) {
+      navBar.style.top = '-86px';
+    } else {
+      navBar.style.top = '0';
+    }
+    lastSrollTop = scrollTop;
+  } else {
+    navBar.style.top = '0';
+  }
+});
 
 const router = useRouter()
 
